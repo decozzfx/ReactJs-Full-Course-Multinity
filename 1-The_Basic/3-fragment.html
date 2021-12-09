@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Fragmen</title>
+</head>
+<body>
+    <!-- div ini menjadi tempat merender element UI -->
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+        // fragment = mem wrap untuk merender beberapa element tanpa ada element pembungkus
+        const root = document.querySelector('#root') // select as render place
+
+        const p1 = React.createElement('p',{ // membuat element
+            children : 'Hello paragraf 1', // property name
+        })
+        const p2 = React.createElement('p',{ // membuat element
+            children : 'Hello paragraf 2', // property name
+        })
+
+        const element = React.createElement(React.Fragment ,{
+            children : [p1, p2],
+        })
+
+        ReactDOM.render(element, root) // Render via React DOM atleast need 2 parameter(<lement>, <init targer element>)
+        // merender object menjadi dom node , kemudian di append ke root 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-JSX-2</title>
+</head>
+<body>
+    <!-- div ini menjadi tempat merender element UI -->
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+        //Nested Element 
+        const root = document.querySelector('#root') // select as render place      
+
+        function setUpper(text){
+            return text.toUpperCase()
+        }
+        
+        const nama = 'budi'
+        const element  = (
+            <h1>Hello { setUpper(nama) }</h1>
+        )
+
+        ReactDOM.render(element, root) // Render via React DOM atleast need 2 parameter(<lement>, <init targer element>)
+        // merender object menjadi dom node , kemudian di append ke root 
+
+    </script>
+</body>
+</html>

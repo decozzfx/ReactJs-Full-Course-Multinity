@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Membuat_UI</title>
+</head>
+<body>
+    <!-- div ini menjadi tempat merender element UI -->
+    <div id="root"> 
+    <script>
+        const root = document.querySelector('#root') // # men select id root untuk manipulasi element
+
+        const element = document.createElement('h1') // membuat element berdasarkan tag (return object)
+        element.textContent = 'Hello from JS' // set element
+        element.className = 'heading-1'
+
+        root.appendChild(element) // merender element
+    </script>
+    </div>
+</body>
+</html>

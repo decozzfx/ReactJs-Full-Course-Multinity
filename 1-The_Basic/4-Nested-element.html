@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Nested-fragment</title>
+</head>
+<body>
+    <!-- div ini menjadi tempat merender element UI -->
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+        //Nested Element 
+        const root = document.querySelector('#root') // select as render place
+
+        const li1 = React.createElement('li', {
+            children : 'apple'
+        })
+        const li2 = React.createElement('li', {
+            children : 'orange'
+        })
+        const li3 = React.createElement('li', {
+            children : 'grape'
+        })
+
+        // const element  = React.createElement('ul', {
+            //     children : [li1, li2, li3]
+            // })
+            
+            /// menulis tanpa content
+            // const element  = React.createElement('ul', {className : 'list'}, 'hello from content')
+            
+            /// paramter ke 3 dan seterusnya dianggap children
+            /// parameter <tagName> , <prop/properti>, <children>, ...<children>
+            // const element  = React.createElement('ul', {className : 'list'}, 'hello' , ' From', ' JS')
+
+        const element  = React.createElement('ul', {className : 'list'}, 
+            React.createElement('li', null, 'apple'),
+            React.createElement('li', null, 'orange'),
+            React.createElement('li', null, 'grape')
+        )
+
+        ReactDOM.render(element, root) // Render via React DOM atleast need 2 parameter(<lement>, <init targer element>)
+        // merender object menjadi dom node , kemudian di append ke root 
+
+    </script>
+</body>
+</html>
